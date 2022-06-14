@@ -2514,6 +2514,8 @@
         <members>Review__c.Leadership_Skills__c</members>
         <members>Review__c.Reason_Recommended__c</members>
         <members>Review__c.Recommend_for_Hire__c</members>
+        <members>Revisit__c.DST__c</members>
+        <members>Revisit__c.Revisit_Purpose__c</members>
         <members>Saas_based__c.Value__c</members>
         <members>SampleDemo__c.Sample1__c</members>
         <members>Sample_Demo_Obj__c.Custom_Field__c</members>
@@ -3950,6 +3952,7 @@
         <members>ReturnOrder</members>
         <members>ReturnOrderLineItem</members>
         <members>Review__c</members>
+        <members>Revisit__c</members>
         <members>Roll__c</members>
         <members>Saas_based__c</members>
         <members>SampleDemo__c</members>
@@ -4257,6 +4260,7 @@
         <members>Release__c</members>
         <members>Resource__c</members>
         <members>Review__c</members>
+        <members>Revisit__c</members>
         <members>Sample_Data_Import</members>
         <members>Student__c</members>
         <members>Suggestion__c</members>
@@ -4780,6 +4784,7 @@
         <members>ReturnOrder-Return Order Layout</members>
         <members>ReturnOrderLineItem-Return Order Line Item Layout</members>
         <members>Review__c-Review Layout</members>
+        <members>Revisit__c-Revisit Layout</members>
         <members>Roll__c-Roll Layout</members>
         <members>Saas_based__c-Saas based Layout</members>
         <members>SampleDemo__c-SampleDemo Layout</members>
@@ -5088,6 +5093,7 @@
         <members>ReturnOrder.All_ReturnOrders</members>
         <members>ReturnOrder.My_ReturnOrders</members>
         <members>Review__c.All</members>
+        <members>Revisit__c.All</members>
         <members>SchedulingConstraint.All_SchedulingConstraints</members>
         <members>SchedulingConstraint.My_SchedulingConstraints</members>
         <members>Scorecard.AllScorecards</members>
