@@ -5166,6 +5166,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Revisit__c.DST__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Revisit__c.Revisit_Purpose__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Saas_based__c.Value__c</field>
         <readable>false</readable>
@@ -9397,6 +9407,9 @@
         <layout>Review__c-Review Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Revisit__c-Revisit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Roll__c-Roll Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -10930,6 +10943,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Review__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Revisit__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
