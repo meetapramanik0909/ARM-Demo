@@ -2835,6 +2835,7 @@
         <members>Supply__c.Quantity__c</members>
         <members>Supply__c.Total_Cost__c</members>
         <members>Supply__c.Unit_Cost__c</members>
+        <members>Systematic_approach__c.Cadence__c</members>
         <members>Task.ActivityDate</members>
         <members>Task.CallDisposition</members>
         <members>Task.CallDurationInSeconds</members>
@@ -3993,6 +3994,7 @@
         <members>Student__c</members>
         <members>Suggestion__c</members>
         <members>Supply__c</members>
+        <members>Systematic_approach__c</members>
         <members>Task</members>
         <members>Team_Architect__c</members>
         <members>Territory2</members>
@@ -4815,6 +4817,7 @@
         <members>Student__c-Student Layout</members>
         <members>Suggestion__c-Suggestion Layout</members>
         <members>Supply__c-Supply Layout</members>
+        <members>Systematic_approach__c-Systematic approach Layout</members>
         <members>Task-Task Layout</members>
         <members>Team_Architect__c-Architect Layout</members>
         <members>Territory2-Territory Layout</members>
