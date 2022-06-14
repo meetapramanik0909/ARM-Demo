@@ -10,7 +10,7 @@ public with sharing class AbcLyndaCreated{
    public static List<Account> getAtAllActiveAccountsToRepo() {
     return [SELECT Id,Name,Active__c FROM Account WHERE Active__c = 'Yes'];
   }
-  //Addition
+  //Addition to the existing pattern
   public static List<Account> GetAllActiveAccountswest() {
     return [SELECT Id,Name,Active__c FROM Account WHERE Active__c = 'Yes'];
   }
