@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label></label>
+        <name>amazonconnect__Channel__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>amazonconnect__ContactId__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>amazonconnect__DominantLanguage__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>amazonconnect__Keywords__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>amazonconnect__NamedEntities__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>amazonconnect__Sentiment__c</name>
+    </fields>
+</CustomObjectTranslation>

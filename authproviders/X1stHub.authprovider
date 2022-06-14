@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://github.com/login/oauth/</authorizeUrl>
+    <consumerKey>22212</consumerKey>
+    <consumerSecret>6rqZ5djuaxgxYgA8TVSLsg==</consumerSecret>
+    <friendlyName>1stHub</friendlyName>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>GitHub</providerType>
+    <sendAccessTokenInHeader>true</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>true</sendSecretInApis>
+    <tokenUrl>https://github.com/login/oauth/</tokenUrl>
+</AuthProvider>

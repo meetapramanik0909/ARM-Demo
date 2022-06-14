@@ -1,0 +1,415 @@
+<!--
+    Copyright (c) Aria Solutions 2018
+    You must have an AWS account to use the Amazon Connect CTI Adapter.
+Downloading and/or using the Amazon Connect CTI Adapter is subject to the terms of the AWS Customer Agreement,
+AWS Service Terms, and AWS Privacy Notice.
+
+© 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+
+NOTE:  Other license terms may apply to certain, identified software components
+contained within or distributed with the Amazon Connect CTI Adapter if such terms are
+included in the LibPhoneNumber-js and Salesforce Open CTI. For such identified components,
+such other license terms will then apply in lieu of the terms above.
+
+** libphonenumber-js; version 0.4.2 / 30.03.2017 -- https://github.com/catamphetamine/libphonenumber-js
+Copyright (c) 2016 @catamphetamine
+
+(The MIT License)
+
+Copyright (c) 2016 @catamphetamine
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+<apex:page id="ACSFCCP_Classic_2" showHeader="false" controller="amazonconnect.ACSFCCP_NamespaceController" extensions="amazonconnect.ACSFCCP_CallInformationController">
+    <apex:includeScript value="/support/api/44.0/interaction.js"/>
+    <apex:includeScript value="/support/console/44.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.amazonconnect__amazonconnectstreams}"/>
+    <apex:includeScript value="{!$Resource.amazonconnect__libphonenumberjs_2}"/>
+    <apex:includeScript value="{!$Resource.amazonconnect__acsf_callattributesdisplay}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__acsf_screenpopmanager}" />
+
+    <apex:slds />
+
+    <style>
+        body {
+            background-color: #F2F2F2;
+            border: none;
+        }
+
+        #outercontainer {
+            justify-content: center;
+            text-align: center;
+            vertical-align: middle;
+            align-items: center;
+            margin: 0 auto;
+            border: none;
+            padding: 0;
+        }
+
+        #connectcontainer {
+            width: 1px;
+            height: 1px;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
+        #callAttributesBadge {
+            top: 42px;
+            left: 10px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #callAttributesPopover {
+            top: 75px;
+            left: 5px;
+            position: absolute;
+            width: 95%;
+            min-width: initial;
+            max-height: 170px;
+        }
+
+        .slds-scope .slds-table td,
+        .slds-scope .slds-table th {
+            padding: 0px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .round-button {
+            display: block
+        }
+    </style>
+
+    <body>
+
+        <div id="outercontainer">
+
+            <div class="slds-scope">
+                <div id="ccpSoftphoneLogin" class="ccpSoftphone ccpLogin slds-align_absolute-center slds-hide" style="margin-top: 200px">
+                    <button id="loginButton" class="slds-button slds-button_brand">Sign in to CCP</button>
+                </div>
+                <div id="callAttributesBadge" class="slds-badge hidden">Attributes</div>
+                <div id="callAttributesPopoverContainer" class="hidden">
+                    <section id="callAttributesPopover" class="slds-popover slds-nubbin_top-left slds-popover_small" role="dialog" aria-label="Dialog Title"
+                             aria-describedby="dialog-body-id-1">
+                        <div class="slds-popover__body" id="dialog-body-id-1">
+                            <table class="slds-table slds-table_striped">
+                                <thead>
+                                <tr class="slds-text-title_caps">
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.ACSFCCP_CallAttributeKey}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.ACSFCCP_CallAttributeValue}</div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="callAttributesList">
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div id="connectcontainer"></div>
+        </div>
+
+    </body>
+
+    <script type="application/javascript">
+        (function (ctx) {
+            var ccSettings = null;
+            var connectCLCW = null;
+            var connectCLCH = null;
+            var connectURL = null;
+            var connectSSOURL = null;
+            var connectPhoneFormat = null;
+            var loginWindow = null;
+
+            var connectMedialess = false;
+            var connectLoginPopup = false;
+            var connectAutoClose = false;
+            var connectAutoLogin = 0;
+
+          var loadACSFIntegration = function () {
+            try { ctx.ACSFIntegration.CallAttributesDisplay.onAgentHandler(); }
+            catch (err) { connect.getLog().info("ConnectSFCCP:loadACSFIntegration:CallAttributesDisplay.onAgentHandler failed: %s", err.message); }
+
+            try { ctx.ACSFIntegration.CallInformation.onAgentHandler("{!namespaceClassPrefix}"); }
+            catch (err) { connect.getLog().info("ConnectSFCCP:loadACSFIntegration:CallInformation.onAgentHandler failed: %s", err.message); }
+
+            try { ctx.ACSFIntegration.CallTask.onAgentHandler("{!namespacePagePrefix}", "{!$Label.ACSFCCP_CallActivityTabName}", ccSettings); }
+            catch (err) { connect.getLog().info("ConnectSFCCP:loadACSFIntegration:CallTask.onAgentHandler failed: %s", err.message); }
+
+            try { ctx.ACSFIntegration.AutoCallCampaign.onAgentHandler(ccSettings); }
+            catch (err) { connect.getLog().info("ConnectSFCCP:loadACSFIntegration:AutoCallCampaign.onAgentHandler failed: %s", err.message); }
+
+            try { ctx.ACSFIntegration.OmniPresenceSync.onAgentHandler("{!namespaceClassPrefix}", ccSettings); }
+            catch (err) { connect.getLog().info("ConnectSFCCP:loadACSFIntegration:OmniPresenceSync.onAgentHandler failed: %s", err.message); }
+          }
+
+
+
+            //login button
+
+            var showLoginScreen = function () {
+                document.getElementById('connectcontainer').classList.add('hidden');
+                document.getElementById('ccpSoftphoneLogin').classList.remove('slds-hide');
+            }
+
+            var showSoftphone = function () {
+                document.getElementById('ccpSoftphoneLogin').classList.add('slds-hide');
+                document.getElementById('connectcontainer').classList.remove('hidden');
+            }
+
+            var setupLoginHandler = function (ccpUrl) {
+                connect.getLog().info("ConnectSFCCP:setupLoginHandler invoked");
+
+                document.getElementById('loginButton').addEventListener('click', function () {
+                    if (connectLoginPopup) {
+                        loginWindow = window.open(ccpUrl, 'AmazonConnectLoginWindow', 'width=400, height=520');
+                    }
+                    else {
+                        loginWindow = window.open(ccpUrl, '_blank');
+                        loginWindow.focus();
+                    }
+                });
+
+                showLoginScreen();
+            }
+
+            var onSoftphoneLoginSuccessful = function () {
+                connect.getLog().info("ConnectSFCCP:onSoftphoneLoginSuccessful invoked");
+                connectAutoLogin = 0;
+                showSoftphone();
+
+                if (loginWindow && connectAutoClose) {
+                    loginWindow.close();
+                    loginWindow = null;
+                }
+            }
+
+            //login button end
+
+            var cbHeightSet = function (response) {
+                if (response.result) {
+                    connect.getLog().info("ConnectSFCCP:cbHeightSet:OK");
+                } else {
+                    connect.getLog().error("ConnectSFCCP:cbHeightSet:Error: %s", response.error);
+                }
+            }
+
+            var cbWidthSet = function (response) {
+                if (response.result) {
+                    connect.getLog().info("ConnectSFCCP:cbWidthSet:OK");
+                } else {
+                    connect.getLog().error("ConnectSFCCP:cbWidthSet:Error: %s", response.error);
+                }
+            }
+
+            var cbClickToDial = function (response) {
+                if (response.result) {
+                    connect.getLog().info("ConnectSFCCP:ccbClickToDial:OK");
+                } else {
+                    connect.getLog().error("ConnectSFCCP:ccbClickToDial:Error: %s", response.error);
+                }
+            };
+
+            var cbInConsole = function (response) {
+                if (response.result) {
+                    connect.getLog().error("ConnectSFCCP:cbInConsole:CCP setup incorrectly for Classic");
+                }
+                else {
+                    connect.getLog().info("ConnectSFCCP:cbInConsole:Classic");
+                    connect.getLog().info("ConnectSFCCP:cbInConsole:Classic: %s", ccSettings["/reqConnectSFCCPOptions/reqConnectURL"]);
+
+                    connectURL = ccSettings["/reqConnectSFCCPOptions/reqConnectURL"];
+                    connectSSOURL = ccSettings["/reqConnectSFCCPOptions/reqConnectSSOURL"];
+                    connectSSORelay = ccSettings["/reqConnectSFCCPOptions/reqConnectSSORelay"];
+                    if (connectSSOURL) {
+                        connectSSOURL = connectSSOURL + '?' + connectSSORelay;
+                    }
+
+                    connectMedialess = ccSettings["/reqConnectSFCCPOptions/reqConnectMedialess"] == 'true' ? true : false;
+                    connectLoginPopup = ccSettings["/reqConnectSFCCPOptions/reqConnectLoginPopup"] == 'true' ? true : false;
+                    connectAutoClose = ccSettings["/reqConnectSFCCPOptions/reqConnectAutoClose"] == 'true' ? true : false;
+
+                    connectAutoLogin = ccSettings["/reqConnectSFCCPOptions/reqConnectAutoLogin"];
+                    connectAutoLogin = parseInt(connectAutoLogin);
+                    if (connectAutoLogin > 0) connectAutoLogin = connectAutoLogin * 1000;
+
+                    connectCLCW = ccSettings["/reqConnectSFCCPOptions/reqConnectCLCW"] + "px";
+                    connectCLCH = ccSettings["/reqConnectSFCCPOptions/reqConnectCLCH"] + "px";
+                    connectPhoneFormat = JSON.parse(ccSettings["/reqConnectSFCCPOptions/reqConnectPhoneFormat"]);
+                    connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:JSContainer:Prefix: %s", connectPhoneFormat.OPF + "|" + connectPhoneFormat.NPF + "|" + connectPhoneFormat.Country + "|" + connectPhoneFormat.NF + "|" + connectPhoneFormat.TNF);
+
+                    var testnum = libphonenumber.format(connectPhoneFormat.TNF, connectPhoneFormat.Country, connectPhoneFormat.NF);
+                    connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:JSContainer:TestNumber:e164Number: %s", testnum);
+                    var testnum2 = testnum.replace(/([^0-9])+/g, '');
+                    connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:JSContainer:TestNumber:e164Numberstripped: %s", testnum2);
+
+                    var container = document.getElementById("connectcontainer");
+                    container.style.width = connectCLCW;
+                    container.style.height = connectCLCH;
+                    connect.core.initCCP(container, {
+                        ccpUrl: connectURL,
+                        loginPopup: false,
+                        softphone: {
+                            allowFramedSoftphone: !connectMedialess
+                        }
+                    });
+
+                    if (connectSSOURL) {
+                        setupLoginHandler(connectSSOURL);
+                    }
+                    else {
+                        setupLoginHandler(connectURL);
+                    }
+
+                      connect.contact(function (contact) {
+                        try {
+                          contact.onConnecting(function () {
+                            if (contact.isInbound()) {
+                              ctx.ACSFIntegration.ScreenpopManager.onConnecting(contact, connectPhoneFormat);
+                              ctx.ACSFIntegration.CallAttributesDisplay.onConnecting(contact);
+                            }
+                          });
+                        } catch (e) {
+                          connect.getLog().error("ConnectSFCCP:onConnecting:Error:").withException(e);
+                        }
+
+                        try {
+                          contact.onAccepted(function () {
+                            ctx.ACSFIntegration.CallAttributesDisplay.onAccepted(contact);
+                          });
+                        } catch (e) {
+                          connect.getLog().error("ConnectSFCCP:onAccepted:Error:").withException(e);
+                        }
+
+                        try {
+                          contact.onEnded(function () {
+                            ctx.ACSFIntegration.CallAttributesDisplay.onEnded(contact);
+                          });
+                        } catch (e) {
+                          connect.getLog().error("ConnectSFCCP:onEnd:Error:").withException(e);
+                        }
+                      });
+
+                    connect.agent(function (agent) {
+                        try {
+                            var onClickListener = function (response) {
+                                try {
+                                    if (response.result) {
+                                        connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:onClickListener:OK: %s", response.result);
+                                        var phoneContact = JSON.parse(response.result);
+                                        var phoneParsed = libphonenumber.parse(phoneContact.number.toString(), { country: { default: connectPhoneFormat.Country } });
+                                        connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:onClickListener:OK:Parsed: %s", phoneParsed.country + "|" + phoneParsed.phone);
+                                        var e164PhoneNumber = libphonenumber.format(phoneParsed.phone, phoneParsed.country, connectPhoneFormat.NF);
+                                        connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:onClickListener:OK:h164Number: %s", e164PhoneNumber);
+                                        var endpoint = connect.Address.byPhoneNumber(e164PhoneNumber);
+
+                                        if (agent && agent.getContacts() && agent.getContacts().length <= 1) {
+                                            if (agent.getContacts().length === 0) {
+                                                agent.connect(endpoint, {});
+                                                connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:onClickListener:OK:AgentConnect");
+                                            } else {
+                                                agent.getContacts()[0].addConnection(endpoint, {});
+                                                connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:onClickListener:OK:ContactAddConnection");
+                                            }
+
+                                            sforce.opencti.setSoftphonePanelVisibility({visible: true});
+                                            connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:onClickListener:OK:setVisible");
+                                            connect.getLog().info("ConnectSFCCP:cbInConsole:Classic:onClickListener:OK:GP: %s", agent.getPermissions());
+                                        }
+                                    }
+                                } catch (e) {
+                                    connect.getLog().error("ConnectSFCCP:cbInConsole:Classic:onClickListener:Error: ").withException(e);
+                                }
+                            }
+                            sforce.interaction.cti.onClickToDial(onClickListener);
+
+                            onSoftphoneLoginSuccessful();
+
+                        } catch (e) {
+                            connect.getLog().error("ConnectSFCCP:cbInConsole:Classic:Agent:Error: ").withException(e);
+                        }
+                    });
+
+                    console.log("ConnectSFCCP:cbInConsole:CTD");
+                    connect.agent(function (agent) {
+                        try {
+                            var aPermissions = agent.getPermissions();
+                            connect.getLog().info("ConnectSFCCP:GP: %s", aPermissions);
+                            if (aPermissions == "outboundCall") {
+                                sforce.interaction.cti.enableClickToDial(cbClickToDial);
+                            }
+                        }
+                        catch (e) {
+                            connect.getLog().error("ConnectSFCCP:GP::Error: ").withException(e);
+                        }
+                    });
+
+                    //auto-login
+                    connect.getLog().info("ConnectSFCCP:cbInConsole:connectAutoLogin=%s", connectAutoLogin);
+                    if (connectAutoLogin >= 1000) {
+                        setTimeout(function () {
+                            if (connectAutoLogin >= 1000) document.getElementById('loginButton').click();
+                        }, connectAutoLogin)
+
+                    }
+
+                    loadACSFIntegration();
+                }
+            };
+
+            var cbGetPageInfo = function (response) {
+                if (response.result) {
+                    connect.getLog().info("ConnectSFCCP:cbGetPageInfo: %s", response.result);
+                } else {
+                    connect.getLog().error("ConnectSFCCP:cbGetPageInfo:Error: %s", response.error);
+                }
+            };
+
+            var cbCCSettings = function (response) {
+                if (response.result) {
+                    connect.getLog().info("ConnectSFCCP:cbCCSettings:OK");
+                    ccSettings = JSON.parse(response.result);
+                    sforce.interaction.isInConsole(cbInConsole);
+                }
+                else {
+                    connect.getLog().info("ConnectSFCCP:cbCCSettings:Error: %s", response.error);
+                }
+            };
+
+            try {
+                connect.getLog().info("ConnectSFCCP:Initialization:getCCSettings");
+                sforce.interaction.cti.getCallCenterSettings(cbCCSettings);
+                sforce.interaction.cti.disableClickToDial();
+            } catch (e) {
+                connect.getLog().error("ConnectSFCCP:Initialization:getCCSettings:Error: ").withException(e);
+            }
+        })(this);
+    </script>
+
+</apex:page>

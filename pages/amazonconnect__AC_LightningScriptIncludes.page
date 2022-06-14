@@ -1,0 +1,93 @@
+<!--
+You must have an AWS account to use the Amazon Connect CTI Adapter.
+Downloading and/or using the Amazon Connect CTI Adapter is subject to the terms of the AWS Customer Agreement,
+AWS Service Terms, and AWS Privacy Notice.
+
+© 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+
+NOTE:  Other license terms may apply to certain, identified software components
+contained within or distributed with the Amazon Connect CTI Adapter if such terms are
+included in the LibPhoneNumber-js and Salesforce Open CTI. For such identified components,
+such other license terms will then apply in lieu of the terms above.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<apex:page id="AC_LightningScriptIncludes"
+           showChat="false"
+           showHeader="false"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           sideBar="false"
+           controller="amazonconnect.AC_Utils">
+
+    <apex:includeScript value="/support/console/47.0/integration.js" />
+    <apex:includeScript value="/support/api/47.0/lightning/opencti_min.js" />
+    <apex:includeScript value="/soap/ajax/47.0/connection.js" />
+
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_ConnectStreams}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_ConnectChat}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_LibPhoneNumber}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_JQuery}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_HE}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_Clipboard}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_Lodash}" />
+
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_Common}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_LogUtils}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_InitializerUtils}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_AgentUtils}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_ContactUtils}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_SalesforceUtils}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_ScriptUtils}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_CtiAttributeUtils}" />
+    <apex:includeScript value="{!$Resource.amazonconnect__AC_PresenceSyncUtils}" />
+
+    <script type="application/javascript">
+        (function (ac) {
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+
+            (async() => {
+                const props = {
+                    namespaceClassPrefix: "{!namespaceClassPrefix}",
+                    namespacePagePrefix: "{!namespacePagePrefix}",
+                    userId: "{!$User.Id}",
+                    userName: "{!$User.Username}",
+                    userEmail: "{!$User.Email}",
+                    sessionId: "{!$Api.Session_ID}"
+                };
+
+                await ac.Utils.Common.init(props);
+                await ac.Utils.Log.init(props);
+                await ac.Utils.Salesforce.init(props);
+                await ac.Utils.Script.init(props);
+
+                await ac.Utils.Salesforce.setSoftphonePopoutEnabled(false);
+
+                await ac.Utils.Initializer.init(props, (bottomPanel, presenceSyncEnabled, ctiScripts, ctiAttributes, presenceSyncRules) => {
+                    $('#bottomPanel').html(bottomPanel);
+
+                    let finalScript = ac.Utils.Script.getFinalScript(ctiScripts);
+
+                    $("body").append($("<script />", {
+                        html: finalScript
+                    }));
+
+                    ac.Utils.Agent.init(props);
+                    ac.Utils.Contact.init(props);
+                    ac.Utils.CtiAttributes.init(props, ctiAttributes);
+                    ac.Utils.PresenceSync.init(props, presenceSyncEnabled, presenceSyncRules);
+                });
+            })();
+        })(this);
+    </script>
+</apex:page>

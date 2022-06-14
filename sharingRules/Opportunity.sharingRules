@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Sharing_Settings_Test</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Sharing Settings Test</label>
+        <sharedTo>
+            <group>APAC_Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>APAC_Group</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

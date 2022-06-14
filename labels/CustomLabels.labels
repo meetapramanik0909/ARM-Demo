@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Home_link</fullName>
+        <categories>Label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Home link</shortDescription>
+        <value>https://meetsarkar\dev\ed.my\salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>Label1</fullName>
+        <categories>UI</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label121</shortDescription>
+        <value>1016F00000LwqNT</value>
+    </labels>
+    <labels>
+        <fullName>LabelTranslation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LabelTranslation</shortDescription>
+        <value>English 001</value>
+    </labels>
+    <labels>
+        <fullName>asxccx</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>asxccx</shortDescription>
+        <value>saacxcdsa</value>
+    </labels>
+    <labels>
+        <fullName>label4</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>label44zas</shortDescription>
+        <value>Source Org</value>
+    </labels>
+    <labels>
+        <fullName>label5</fullName>
+        <categories>sfawesfx</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>label5asd</shortDescription>
+        <value>Source Org3</value>
+    </labels>
+    <labels>
+        <fullName>label6</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>label6</shortDescription>
+        <value>csrwzGRDF asddwdqas</value>
+    </labels>
+    <labels>
+        <fullName>label7</fullName>
+        <categories>sfawesfx</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>label7</shortDescription>
+        <value>sdfaerfseeed12ACXSAD</value>
+    </labels>
+    <labels>
+        <fullName>label8</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>label8</shortDescription>
+        <value>dsfdsASWDSXS</value>
+    </labels>
+</CustomLabels>

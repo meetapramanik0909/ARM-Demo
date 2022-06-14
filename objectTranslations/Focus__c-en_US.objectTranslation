@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Focus</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Focuses</value>
+    </caseValues>
+    <fields>
+        <label></label>
+        <name>Area__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Arena__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Tets</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Test</actionButtonLabel>
+        <actionButtonLink>https://merfantz.com/blog/session-timeout-settings-at-profile-level-in-salesforce/</actionButtonLink>
+        <body>&lt;p&gt;Hi &lt;/p&gt;&lt;p&gt;This is Test&lt;/p&gt;</body>
+        <customApplication>standard__Service</customApplication>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Test</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Tets</masterLabel>
+        <publishedDate>2022-06-09</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2022-06-10</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Test</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

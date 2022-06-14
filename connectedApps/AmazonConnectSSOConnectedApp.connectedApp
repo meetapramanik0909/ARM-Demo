@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <attributes>
+        <formula>&apos;test&apos; &amp; &apos;,&apos; &amp; &apos;test ARN&apos;</formula>
+        <key>https://aws.amazon.com/SAML/Attributes/Role</key>
+    </attributes>
+    <attributes>
+        <formula>$User.Email</formula>
+        <key>https://aws.amazon.com/SAML/Attributes/RoleSessionName</key>
+    </attributes>
+    <contactEmail>meeta.pramanik@autorabit.com</contactEmail>
+    <label>AmazonConnectSSOConnectedApp</label>
+    <samlConfig>
+        <acsUrl>https://signin.aws.amazon.com/saml</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>AmazonConnectSalesforce</entityUrl>
+        <issuer>https://meetsarkar-dev-ed.my.salesforce.com</issuer>
+        <samlNameIdFormat>Persistent</samlNameIdFormat>
+        <samlSigningAlgoType>SHA1</samlSigningAlgoType>
+        <samlSubjectType>PersistentId</samlSubjectType>
+    </samlConfig>
+</ConnectedApp>

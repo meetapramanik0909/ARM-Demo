@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ABC Full Object</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AVBC</value>
+    </caseValues>
+    <fields>
+        <label></label>
+        <name>AA1__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>AA2__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Applicant_Name__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Codescan__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Task_category__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

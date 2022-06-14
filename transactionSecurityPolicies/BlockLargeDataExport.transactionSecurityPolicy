@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TransactionSecurityPolicy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <action>
+        <block>true</block>
+        <endSession>false</endSession>
+        <freezeUser>false</freezeUser>
+        <notifications>
+            <inApp>true</inApp>
+            <sendEmail>true</sendEmail>
+            <user>meeta.pramanik@trailsresult.com</user>
+        </notifications>
+        <twoFactorAuthentication>false</twoFactorAuthentication>
+    </action>
+    <active>true</active>
+    <apexClass>BlockLargeDataExportEventCondition</apexClass>
+    <description>wee</description>
+    <developerName>BlockLargeDataExport</developerName>
+    <eventName>ReportEvent</eventName>
+    <masterLabel>Block Large Data Export</masterLabel>
+    <type>CustomApexPolicy</type>
+</TransactionSecurityPolicy>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Battle Station</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Battle Stations</value>
+    </caseValues>
+    <fields>
+        <label></label>
+        <name>Crew_Members__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Project_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Weapons_Status__c</name>
+        <picklistValues>
+            <masterLabel>Fully Operational</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Yet Operational</masterLabel>
+            <translation></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,114 @@
+<!--
+You must have an AWS account to use the Amazon Connect CTI Adapter.
+Downloading and/or using the Amazon Connect CTI Adapter is subject to the terms of the AWS Customer Agreement,
+AWS Service Terms, and AWS Privacy Notice.
+
+© 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+
+NOTE:  Other license terms may apply to certain, identified software components
+contained within or distributed with the Amazon Connect CTI Adapter if such terms are
+included in the LibPhoneNumber-js and Salesforce Open CTI. For such identified components,
+such other license terms will then apply in lieu of the terms above.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<apex:page id="AC_RecordingViewer" controller="amazonconnect.AC_RecordingViewerController" docType="html-5.0" showHeader="false" showChat="false">
+    <apex:slds />
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+        <apex:includeScript value="{!$Resource.amazonconnect__AC_Wavesurfer}" />
+        <apex:includeScript value="{!$Resource.amazonconnect__AC_WavesurferRegions}" />
+        <apex:stylesheet value="{!$Resource.amazonconnect__AC_CommonStylesheet}" />
+    </head>
+    <body>
+
+    <div class="slds-box_border">
+        <div id="waveform" class="wave">
+        </div>
+        <div class="waveControls">
+            <button class="slds-button slds-button_brand" onclick="wavesurfer.skipBackward()">
+                Backward
+            </button>
+
+            <button class="slds-button slds-button_brand" onclick="wavesurfer.playPause()">
+                Play / Pause
+            </button>
+
+            <button class="slds-button slds-button_brand" onclick="wavesurfer.skipForward()">
+                Forward
+            </button>
+        </div>
+    </div>
+
+    <script type="application/javascript">
+        let wavesurfer;
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.AC_RecordingViewerController.getAttachedCallRecording}',
+            '{!recordId}',
+            'Agent',
+            '#005FB2',
+            'Caller',
+            '#F2F2F3',
+            function (result, event) {
+                let transcript = result.transcript.map(item => {
+                    return {
+                        start: item.start_time,
+                        end: item.end_time,
+                        color: item.color
+                    }
+                });
+
+                console.log('Record Id: ' + '{!recordId}');
+                console.log('Transcript: ' + JSON.stringify(transcript));
+
+                wavesurfer = WaveSurfer.create({
+                    container: '#waveform',
+                    responsive: true,
+                    autoCenter: true,
+                    height: '80',
+                    fillParent: true,
+                    barWidth: 2,
+                    barHeight: 3,
+                    barGap: null,
+                    scrollParent: true,
+                    plugins: [
+                        WaveSurfer.regions.create({
+                            regions: transcript,
+                            dragSelection: {
+                                slop: 5
+                            }
+                        })
+                    ]
+                });
+
+                wavesurfer.loadArrayBuffer(_base64ToArrayBuffer(result.recording.content));
+            }
+        )
+
+        function _base64ToArrayBuffer(base64) {
+            let binary_string =  window.atob(base64);
+            let len = binary_string.length;
+            let bytes = new Uint8Array( len );
+
+            for (let i = 0; i < len; i++)        {
+                bytes[i] = binary_string.charCodeAt(i);
+            }
+
+            return bytes.buffer;
+        }
+    </script>
+    </body>
+    </html>
+</apex:page>

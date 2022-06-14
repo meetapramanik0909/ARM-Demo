@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>Meeta</container>
+    <containerType>Network</containerType>
+    <label>Default Navigation</label>
+    <navigationMenuItem>
+        <label>Topics12</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>ShowMoreTopics</target>
+        <type>NavigationalTopic</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>SupeRabit- test the change222</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <type>MenuLabel</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>autodrama</label>
+        <position>3</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>Account</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+</NavigationMenu>

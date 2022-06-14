@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value></value>
+    </caseValues>
+    <fields>
+        <label>Channel G</label>
+        <name>Channel_Details__c</name>
+    </fields>
+    <fields>
+        <label>name G</label>
+        <name>Name__c</name>
+    </fields>
+    <nameFieldLabel></nameFieldLabel>
+</CustomObjectTranslation>

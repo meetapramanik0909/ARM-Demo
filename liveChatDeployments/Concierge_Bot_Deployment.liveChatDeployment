@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LiveChatDeployment xmlns="http://soap.sforce.com/2006/04/metadata">
+    <connectionTimeoutDuration>0</connectionTimeoutDuration>
+    <connectionWarningDuration>0</connectionWarningDuration>
+    <displayQueuePosition>false</displayQueuePosition>
+    <enablePrechatApi>true</enablePrechatApi>
+    <enableTranscriptSave>false</enableTranscriptSave>
+    <label>Concierge Bot Deployment</label>
+    <site>Meeta</site>
+    <windowTitle>Concierge Bot</windowTitle>
+</LiveChatDeployment>
