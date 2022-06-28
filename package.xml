@@ -2812,6 +2812,7 @@
         <members>Solution.SolutionNote</members>
         <members>Solution.Status</members>
         <members>Solution__c.Name__c</members>
+        <members>Square_Title__c.Value__c</members>
         <members>StreamActivityAccess.ActivityTeamId</members>
         <members>StreamActivityAccess.ExternalResource</members>
         <members>StreamActivityAccess.IsContentShared</members>
@@ -3991,6 +3992,7 @@
         <members>SocialPersona</members>
         <members>Solution</members>
         <members>Solution__c</members>
+        <members>Square_Title__c</members>
         <members>Standard__c</members>
         <members>StreamActivityAccess</members>
         <members>StreamingChannel</members>
@@ -4818,6 +4820,7 @@
         <members>SkillRequirement-Skill Requirement Layout</members>
         <members>Solution-Solution Layout</members>
         <members>Solution__c-Solution Layout</members>
+        <members>Square_Title__c-Square Title Layout</members>
         <members>Standard__c-Standard Layout</members>
         <members>Student__c-Student Layout</members>
         <members>Suggestion__c-Suggestion Layout</members>

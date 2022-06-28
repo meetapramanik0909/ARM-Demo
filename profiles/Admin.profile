@@ -5737,6 +5737,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Square_Title__c.Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Student__c.Academic_Performance_History__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -9509,6 +9514,9 @@
         <layout>Solution__c-Solution Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Square_Title__c-Square Title Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Standard__c-Standard Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -11561,6 +11569,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Solution__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Square_Title__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
