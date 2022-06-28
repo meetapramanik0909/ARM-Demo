@@ -157,7 +157,7 @@
         <fullName>Value__c</fullName>
         <externalId>false</externalId>
         <label>Value</label>
-        <length>40</length>
+        <length>42</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
