@@ -853,6 +853,7 @@
         <members>Big_Account__b.Knowledge_Product__c</members>
         <members>Big_Account__b.Knowledge_Products__c</members>
         <members>Big_Account__b.test__c</members>
+        <members>Block_Chain__c.Value__c</members>
         <members>Bot_Command__c.Active__c</members>
         <members>Bot_Command__c.Apex_Class__c</members>
         <members>Bot_Command__c.Pattern__c</members>
@@ -3740,6 +3741,7 @@
         <members>AuthorizationFormText</members>
         <members>Battle_Station__c</members>
         <members>Big_Account__b</members>
+        <members>Block_Chain__c</members>
         <members>Bot_Command__c</members>
         <members>Broker__c</members>
         <members>Bucket__c</members>
@@ -4625,6 +4627,7 @@
         <members>Association__c-Mutual</members>
         <members>Association__c-Partner</members>
         <members>Battle_Station__c-Battle Station Layout</members>
+        <members>Block_Chain__c-Block Chain Layout</members>
         <members>Bot_Command__c-Bot Action Layout</members>
         <members>Broker__c-Broker Layout</members>
         <members>Bucket__c-Bucket Layout</members>
