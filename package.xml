@@ -853,6 +853,7 @@
         <members>Big_Account__b.Knowledge_Product__c</members>
         <members>Big_Account__b.Knowledge_Products__c</members>
         <members>Big_Account__b.test__c</members>
+        <members>Block_Chain__c.Value__c</members>
         <members>Bot_Command__c.Active__c</members>
         <members>Bot_Command__c.Apex_Class__c</members>
         <members>Bot_Command__c.Pattern__c</members>
@@ -867,6 +868,7 @@
         <members>BusinessBrand.Name</members>
         <members>BusinessBrand.OrgId</members>
         <members>BusinessBrand.ParentId</members>
+        <members>CTIS__c.CTI_Value__c</members>
         <members>Campaign.ActualCost</members>
         <members>Campaign.AmountAllOpportunities</members>
         <members>Campaign.AmountWonOpportunities</members>
@@ -2812,6 +2814,7 @@
         <members>Solution.SolutionNote</members>
         <members>Solution.Status</members>
         <members>Solution__c.Name__c</members>
+        <members>Square_Title__c.Value__c</members>
         <members>StreamActivityAccess.ActivityTeamId</members>
         <members>StreamActivityAccess.ExternalResource</members>
         <members>StreamActivityAccess.IsContentShared</members>
@@ -3739,10 +3742,12 @@
         <members>AuthorizationFormText</members>
         <members>Battle_Station__c</members>
         <members>Big_Account__b</members>
+        <members>Block_Chain__c</members>
         <members>Bot_Command__c</members>
         <members>Broker__c</members>
         <members>Bucket__c</members>
         <members>BusinessBrand</members>
+        <members>CTIS__c</members>
         <members>Campaign</members>
         <members>CampaignMember</members>
         <members>Candidate__c</members>
@@ -3991,6 +3996,7 @@
         <members>SocialPersona</members>
         <members>Solution</members>
         <members>Solution__c</members>
+        <members>Square_Title__c</members>
         <members>Standard__c</members>
         <members>StreamActivityAccess</members>
         <members>StreamingChannel</members>
@@ -4623,10 +4629,12 @@
         <members>Association__c-Mutual</members>
         <members>Association__c-Partner</members>
         <members>Battle_Station__c-Battle Station Layout</members>
+        <members>Block_Chain__c-Block Chain Layout</members>
         <members>Bot_Command__c-Bot Action Layout</members>
         <members>Broker__c-Broker Layout</members>
         <members>Bucket__c-Bucket Layout</members>
         <members>BusinessBrand-Business Brand Layout</members>
+        <members>CTIS__c-CTIS Layout</members>
         <members>Campaign-Campaign Layout</members>
         <members>CampaignMember-Campaign Member Page Layout</members>
         <members>Candidate__c-Candidate Layout</members>
@@ -4818,6 +4826,7 @@
         <members>SkillRequirement-Skill Requirement Layout</members>
         <members>Solution-Solution Layout</members>
         <members>Solution__c-Solution Layout</members>
+        <members>Square_Title__c-Square Title Layout</members>
         <members>Standard__c-Standard Layout</members>
         <members>Student__c-Student Layout</members>
         <members>Suggestion__c-Suggestion Layout</members>
