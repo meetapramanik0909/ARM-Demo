@@ -4977,6 +4977,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Reliability__c.Feature_specification__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Remidiation_Effort__c.Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -9399,6 +9404,9 @@
         <layout>Release__c-Release Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Reliability__c-Reliability Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Remidiation_Effort__c-Remidiation Effort Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -11280,6 +11288,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Release__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Reliability__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

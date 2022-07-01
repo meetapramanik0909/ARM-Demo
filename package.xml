@@ -2446,6 +2446,7 @@
         <members>RefundLinePayment.Type</members>
         <members>RefundLinePayment.UnappliedDate</members>
         <members>Release__c.Label__c</members>
+        <members>Reliability__c.Feature_specification__c</members>
         <members>Remidiation_Effort__c.Duration__c</members>
         <members>ReportAnomalyEventStore.EventDate</members>
         <members>ReportAnomalyEventStore.EventIdentifier</members>
@@ -3947,6 +3948,7 @@
         <members>Refund</members>
         <members>RefundLinePayment</members>
         <members>Release__c</members>
+        <members>Reliability__c</members>
         <members>Remidiation_Effort__c</members>
         <members>ReportAnomalyEventStore</members>
         <members>ResourceAbsence</members>
@@ -4782,6 +4784,7 @@
         <members>Refund-Refund Layout</members>
         <members>RefundLinePayment-Refund Line Payment Layout</members>
         <members>Release__c-Release Layout</members>
+        <members>Reliability__c-Reliability Layout</members>
         <members>Remidiation_Effort__c-Remidiation Effort Layout</members>
         <members>ResourceAbsence-Resource Absence Layout</members>
         <members>ResourcePreference-Resource Preference Layout</members>

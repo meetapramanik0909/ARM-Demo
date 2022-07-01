@@ -16,11 +16,5 @@ public with sharing class ChangePasswordController {
         //return Site.verifyNewPassword (newPassword, changePassword , oldpassword);    
 
      }
-     public void standard() {
-     list<Account>listOfAccounts = [select id, name from account limit 100];
-    // iteration over the list of accounts
-    for(Account Acc : listOfAccounts){
-    //your logic
-    }
-}
+     
 }
