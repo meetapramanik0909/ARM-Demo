@@ -868,6 +868,7 @@
         <members>BusinessBrand.Name</members>
         <members>BusinessBrand.OrgId</members>
         <members>BusinessBrand.ParentId</members>
+        <members>CTIS__c.CTI_Value__c</members>
         <members>Campaign.ActualCost</members>
         <members>Campaign.AmountAllOpportunities</members>
         <members>Campaign.AmountWonOpportunities</members>
@@ -3747,6 +3748,7 @@
         <members>Broker__c</members>
         <members>Bucket__c</members>
         <members>BusinessBrand</members>
+        <members>CTIS__c</members>
         <members>Campaign</members>
         <members>CampaignMember</members>
         <members>Candidate__c</members>
@@ -4634,6 +4636,7 @@
         <members>Broker__c-Broker Layout</members>
         <members>Bucket__c-Bucket Layout</members>
         <members>BusinessBrand-Business Brand Layout</members>
+        <members>CTIS__c-CTIS Layout</members>
         <members>Campaign-Campaign Layout</members>
         <members>CampaignMember-Campaign Member Page Layout</members>
         <members>Candidate__c-Candidate Layout</members>
