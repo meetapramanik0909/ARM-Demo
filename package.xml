@@ -853,6 +853,7 @@
         <members>Big_Account__b.Knowledge_Product__c</members>
         <members>Big_Account__b.Knowledge_Products__c</members>
         <members>Big_Account__b.test__c</members>
+        <members>Block_Chain__c.Value__c</members>
         <members>Bot_Command__c.Active__c</members>
         <members>Bot_Command__c.Apex_Class__c</members>
         <members>Bot_Command__c.Pattern__c</members>
@@ -867,6 +868,7 @@
         <members>BusinessBrand.Name</members>
         <members>BusinessBrand.OrgId</members>
         <members>BusinessBrand.ParentId</members>
+        <members>CTIS__c.CTI_Value__c</members>
         <members>Campaign.ActualCost</members>
         <members>Campaign.AmountAllOpportunities</members>
         <members>Campaign.AmountWonOpportunities</members>
@@ -2445,6 +2447,8 @@
         <members>RefundLinePayment.Type</members>
         <members>RefundLinePayment.UnappliedDate</members>
         <members>Release__c.Label__c</members>
+        <members>Reliability__c.Feature_specification__c</members>
+        <members>Remidiation_Effort__c.Duration__c</members>
         <members>ReportAnomalyEventStore.EventDate</members>
         <members>ReportAnomalyEventStore.EventIdentifier</members>
         <members>ReportAnomalyEventStore.Report</members>
@@ -2513,6 +2517,8 @@
         <members>Review__c.Leadership_Skills__c</members>
         <members>Review__c.Reason_Recommended__c</members>
         <members>Review__c.Recommend_for_Hire__c</members>
+        <members>Revisit__c.DST__c</members>
+        <members>Revisit__c.Revisit_Purpose__c</members>
         <members>Saas_based__c.Value__c</members>
         <members>SampleDemo__c.Sample1__c</members>
         <members>Sample_Demo_Obj__c.Custom_Field__c</members>
@@ -2809,6 +2815,7 @@
         <members>Solution.SolutionNote</members>
         <members>Solution.Status</members>
         <members>Solution__c.Name__c</members>
+        <members>Square_Title__c.Value__c</members>
         <members>StreamActivityAccess.ActivityTeamId</members>
         <members>StreamActivityAccess.ExternalResource</members>
         <members>StreamActivityAccess.IsContentShared</members>
@@ -2834,6 +2841,7 @@
         <members>Supply__c.Quantity__c</members>
         <members>Supply__c.Total_Cost__c</members>
         <members>Supply__c.Unit_Cost__c</members>
+        <members>Systematic_approach__c.Cadence__c</members>
         <members>Task.ActivityDate</members>
         <members>Task.CallDisposition</members>
         <members>Task.CallDurationInSeconds</members>
@@ -3735,10 +3743,12 @@
         <members>AuthorizationFormText</members>
         <members>Battle_Station__c</members>
         <members>Big_Account__b</members>
+        <members>Block_Chain__c</members>
         <members>Bot_Command__c</members>
         <members>Broker__c</members>
         <members>Bucket__c</members>
         <members>BusinessBrand</members>
+        <members>CTIS__c</members>
         <members>Campaign</members>
         <members>CampaignMember</members>
         <members>Candidate__c</members>
@@ -3940,6 +3950,8 @@
         <members>Refund</members>
         <members>RefundLinePayment</members>
         <members>Release__c</members>
+        <members>Reliability__c</members>
+        <members>Remidiation_Effort__c</members>
         <members>ReportAnomalyEventStore</members>
         <members>ResourceAbsence</members>
         <members>ResourcePreference</members>
@@ -3947,6 +3959,7 @@
         <members>ReturnOrder</members>
         <members>ReturnOrderLineItem</members>
         <members>Review__c</members>
+        <members>Revisit__c</members>
         <members>Roll__c</members>
         <members>Saas_based__c</members>
         <members>SampleDemo__c</members>
@@ -3985,12 +3998,14 @@
         <members>SocialPersona</members>
         <members>Solution</members>
         <members>Solution__c</members>
+        <members>Square_Title__c</members>
         <members>Standard__c</members>
         <members>StreamActivityAccess</members>
         <members>StreamingChannel</members>
         <members>Student__c</members>
         <members>Suggestion__c</members>
         <members>Supply__c</members>
+        <members>Systematic_approach__c</members>
         <members>Task</members>
         <members>Team_Architect__c</members>
         <members>Territory2</members>
@@ -4253,6 +4268,7 @@
         <members>Release__c</members>
         <members>Resource__c</members>
         <members>Review__c</members>
+        <members>Revisit__c</members>
         <members>Sample_Data_Import</members>
         <members>Student__c</members>
         <members>Suggestion__c</members>
@@ -4615,10 +4631,12 @@
         <members>Association__c-Mutual</members>
         <members>Association__c-Partner</members>
         <members>Battle_Station__c-Battle Station Layout</members>
+        <members>Block_Chain__c-Block Chain Layout</members>
         <members>Bot_Command__c-Bot Action Layout</members>
         <members>Broker__c-Broker Layout</members>
         <members>Bucket__c-Bucket Layout</members>
         <members>BusinessBrand-Business Brand Layout</members>
+        <members>CTIS__c-CTIS Layout</members>
         <members>Campaign-Campaign Layout</members>
         <members>CampaignMember-Campaign Member Page Layout</members>
         <members>Candidate__c-Candidate Layout</members>
@@ -4769,12 +4787,15 @@
         <members>Refund-Refund Layout</members>
         <members>RefundLinePayment-Refund Line Payment Layout</members>
         <members>Release__c-Release Layout</members>
+        <members>Reliability__c-Reliability Layout</members>
+        <members>Remidiation_Effort__c-Remidiation Effort Layout</members>
         <members>ResourceAbsence-Resource Absence Layout</members>
         <members>ResourcePreference-Resource Preference Layout</members>
         <members>Resource__c-Resource Layout</members>
         <members>ReturnOrder-Return Order Layout</members>
         <members>ReturnOrderLineItem-Return Order Line Item Layout</members>
         <members>Review__c-Review Layout</members>
+        <members>Revisit__c-Revisit Layout</members>
         <members>Roll__c-Roll Layout</members>
         <members>Saas_based__c-Saas based Layout</members>
         <members>SampleDemo__c-SampleDemo Layout</members>
@@ -4808,10 +4829,12 @@
         <members>SkillRequirement-Skill Requirement Layout</members>
         <members>Solution-Solution Layout</members>
         <members>Solution__c-Solution Layout</members>
+        <members>Square_Title__c-Square Title Layout</members>
         <members>Standard__c-Standard Layout</members>
         <members>Student__c-Student Layout</members>
         <members>Suggestion__c-Suggestion Layout</members>
         <members>Supply__c-Supply Layout</members>
+        <members>Systematic_approach__c-Systematic approach Layout</members>
         <members>Task-Task Layout</members>
         <members>Team_Architect__c-Architect Layout</members>
         <members>Territory2-Territory Layout</members>
@@ -5082,6 +5105,7 @@
         <members>ReturnOrder.All_ReturnOrders</members>
         <members>ReturnOrder.My_ReturnOrders</members>
         <members>Review__c.All</members>
+        <members>Revisit__c.All</members>
         <members>SchedulingConstraint.All_SchedulingConstraints</members>
         <members>SchedulingConstraint.My_SchedulingConstraints</members>
         <members>Scorecard.AllScorecards</members>

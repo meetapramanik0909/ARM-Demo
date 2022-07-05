@@ -1707,6 +1707,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Block_Chain__c.Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Bot_Command__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1768,6 +1773,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>BusinessBrand.ParentId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CTIS__c.CTI_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4972,6 +4982,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Reliability__c.Feature_specification__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Remidiation_Effort__c.Duration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ResourceAbsence.Address</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5158,6 +5178,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Review__c.Recommend_for_Hire__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Revisit__c.DST__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Revisit__c.Revisit_Purpose__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5718,6 +5748,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Solution__c.Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Square_Title__c.Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8925,6 +8960,9 @@
         <layout>Battle_Station__c-Battle Station Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Block_Chain__c-Block Chain Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Bot_Command__c-Bot Action Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -8935,6 +8973,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>BusinessBrand-Business Brand Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CTIS__c-CTIS Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Campaign-Campaign Layout</layout>
@@ -9371,6 +9412,12 @@
         <layout>Release__c-Release Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Reliability__c-Reliability Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Remidiation_Effort__c-Remidiation Effort Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ResourceAbsence-Resource Absence Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -9387,6 +9434,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Review__c-Review Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Revisit__c-Revisit Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Roll__c-Roll Layout</layout>
@@ -9486,6 +9536,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Solution__c-Solution Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Square_Title__c-Square Title Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Standard__c-Standard Layout</layout>
@@ -10045,6 +10098,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Block_Chain__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Bot_Command__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -10073,6 +10135,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>BusinessBrand</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>CTIS__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -11242,6 +11313,24 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Reliability__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Remidiation_Effort__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>ReportAnomalyEventStore</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -11270,6 +11359,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Review__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Revisit__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -11522,6 +11620,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Solution__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Square_Title__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -12489,6 +12596,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Review__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Revisit__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

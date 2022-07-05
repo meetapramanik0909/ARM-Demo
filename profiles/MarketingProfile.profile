@@ -4972,6 +4972,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Remidiation_Effort__c.Duration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ResourceAbsence.Address</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5158,6 +5163,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Review__c.Recommend_for_Hire__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Revisit__c.DST__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Revisit__c.Revisit_Purpose__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9371,6 +9386,9 @@
         <layout>Release__c-Release Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Remidiation_Effort__c-Remidiation Effort Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ResourceAbsence-Resource Absence Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -9387,6 +9405,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Review__c-Review Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Revisit__c-Revisit Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Roll__c-Roll Layout</layout>
@@ -10922,6 +10943,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Review__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Revisit__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

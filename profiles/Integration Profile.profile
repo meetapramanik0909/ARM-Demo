@@ -1772,6 +1772,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>CTIS__c.CTI_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Campaign.ActualCost</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4969,6 +4974,11 @@
         <editable>false</editable>
         <field>Release__c.Label__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Reliability__c.Feature_specification__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -8937,6 +8947,9 @@
         <layout>BusinessBrand-Business Brand Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>CTIS__c-CTIS Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Campaign-Campaign Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -9369,6 +9382,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Release__c-Release Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Reliability__c-Reliability Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ResourceAbsence-Resource Absence Layout</layout>
@@ -10064,6 +10080,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>BusinessBrand</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>CTIS__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -11225,6 +11250,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Release__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Reliability__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
