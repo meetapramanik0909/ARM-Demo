@@ -6,7 +6,7 @@ public with sharing class ChangePasswordController {
     public String newPassword {get; set;}
     public String verifyNewPassword {get; set;}
     public String changePassword {get; set;} 
-        Account acc = [select id, name from Account Limit 1]; 
+        Account acc = [select id, name from Account Limit 1]; //additional
 
     public PageReference changePassword() {
         return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    

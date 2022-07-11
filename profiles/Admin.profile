@@ -6002,6 +6002,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Visibility_Entry__c.Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Whitefield__c.Direction__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -9616,6 +9621,9 @@
         <layout>Vertical__c-Vertical Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Visibility_Entry__c-Visibility Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>WarrantyTerm-Warranty Term Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -11790,6 +11798,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Vertical__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Visibility_Entry__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
