@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>54.0</version>
+    <version>51.0</version>
     <types>
         <members>Milestones</members>
         <name>AnimationRule</name>
@@ -3002,6 +3002,7 @@
         <members>Value_Details__c.Amount__c</members>
         <members>Vertical__c.Name__c</members>
         <members>Vertical__c.Values__c</members>
+        <members>Visibility_Entry__c.Value__c</members>
         <members>WarrantyTerm.Code</members>
         <members>WarrantyTerm.Description</members>
         <members>WarrantyTerm.EffectiveStartDate</members>
@@ -4038,6 +4039,7 @@
         <members>Validation__c</members>
         <members>Value_Details__c</members>
         <members>Vertical__c</members>
+        <members>Visibility_Entry__c</members>
         <members>WarrantyTerm</members>
         <members>Whitefield__c</members>
         <members>WorkOrder</members>
@@ -4867,6 +4869,7 @@
         <members>Validation__c-Validation Layout</members>
         <members>Value_Details__c-Value Details Layout</members>
         <members>Vertical__c-Vertical Layout</members>
+        <members>Visibility_Entry__c-Visibility Entry Layout</members>
         <members>WarrantyTerm-Warranty Term Layout</members>
         <members>Whitefield__c-Whitefield Layout</members>
         <members>WorkOrder-Work Order Layout</members>
