@@ -1310,6 +1310,7 @@
         <members>Customer.Name</members>
         <members>Customer.PartyId</members>
         <members>Customer.TotalLifeTimeValue</members>
+        <members>D_Table__c.Name__c</members>
         <members>DandBCompany.CompanyCurrencyIsoCode</members>
         <members>DandBCompany.CountryAccessCode</members>
         <members>DandBCompany.CurrencyCode</members>
@@ -3782,6 +3783,7 @@
         <members>CredentialStuffingEventStore</members>
         <members>Custo_Property__c</members>
         <members>Customer</members>
+        <members>D_Table__c</members>
         <members>DandBCompany</members>
         <members>DataObject__c</members>
         <members>DataUseLegalBasis</members>
@@ -4660,6 +4662,7 @@
         <members>ContractLineItem-Contract Line Item Layout</members>
         <members>Custo_Property__c-Custom Property Layout</members>
         <members>Customer-Customer Layout</members>
+        <members>D_Table__c-D Table Layout</members>
         <members>DandBCompany-D%26B Company Layout</members>
         <members>DataObject__c-DataObject Layout</members>
         <members>DelegatedAccount-External Managed Account Layout</members>
