@@ -2816,6 +2816,7 @@
         <members>StreamActivityAccess.ExternalResource</members>
         <members>StreamActivityAccess.IsContentShared</members>
         <members>StreamActivityAccess.OwnerId</members>
+        <members>Streamline_Force__c.Name__c</members>
         <members>Student__c.Academic_Performance_History__c</members>
         <members>Student__c.Classroom__c</members>
         <members>Student__c.DOB__c</members>
@@ -3996,6 +3997,7 @@
         <members>Standard__c</members>
         <members>StreamActivityAccess</members>
         <members>StreamingChannel</members>
+        <members>Streamline_Force__c</members>
         <members>Student__c</members>
         <members>Suggestion__c</members>
         <members>Supply__c</members>
@@ -4822,6 +4824,7 @@
         <members>Solution__c-Solution Layout</members>
         <members>Square_Title__c-Square Title Layout</members>
         <members>Standard__c-Standard Layout</members>
+        <members>Streamline_Force__c-Streamline Force Layout</members>
         <members>Student__c-Student Layout</members>
         <members>Suggestion__c-Suggestion Layout</members>
         <members>Supply__c-Supply Layout</members>

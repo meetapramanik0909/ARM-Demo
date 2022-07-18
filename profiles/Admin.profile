@@ -5737,6 +5737,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Streamline_Force__c.Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Student__c.Academic_Performance_History__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -9520,6 +9525,9 @@
         <layout>Standard__c-Standard Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Streamline_Force__c-Streamline Force Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Student__c-Student Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -11599,6 +11607,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>StreamingChannel</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Streamline_Force__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
