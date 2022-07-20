@@ -949,6 +949,7 @@
         <members>Candidate__c.Street_Address_2__c</members>
         <members>Candidate__c.Years_of_Experience__c</members>
         <members>Candidate__c.Zip_Postal_Code__c</members>
+        <members>CaptureDemo__c.Name__c</members>
         <members>CardPaymentMethod.AccountId</members>
         <members>CardPaymentMethod.AuditEmail</members>
         <members>CardPaymentMethod.AutoCardType</members>
@@ -3750,6 +3751,7 @@
         <members>CampaignMember</members>
         <members>Campaign_Custom__c</members>
         <members>Candidate__c</members>
+        <members>CaptureDemo__c</members>
         <members>CardPaymentMethod</members>
         <members>Case</members>
         <members>CaseContactRole</members>
@@ -4637,6 +4639,7 @@
         <members>CampaignMember-Campaign Member Page Layout</members>
         <members>Campaign_Custom__c-Campaign Custom Layout</members>
         <members>Candidate__c-Candidate Layout</members>
+        <members>CaptureDemo__c-CaptureDemo Layout</members>
         <members>CardPaymentMethod-Card Payment Method Layout</members>
         <members>Case-Case %28Marketing%29 Layout</members>
         <members>Case-Case %28Sales%29 Layout</members>
