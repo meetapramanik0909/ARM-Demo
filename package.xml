@@ -933,6 +933,7 @@
         <members>CampaignMember.Status</members>
         <members>CampaignMember.Street</members>
         <members>CampaignMember.Title</members>
+        <members>Campaign_Custom__c.Event_Place__c</members>
         <members>Candidate__c.City__c</members>
         <members>Candidate__c.Country__c</members>
         <members>Candidate__c.Current_Employer__c</members>
@@ -3753,6 +3754,7 @@
         <members>CTIS__c</members>
         <members>Campaign</members>
         <members>CampaignMember</members>
+        <members>Campaign_Custom__c</members>
         <members>Candidate__c</members>
         <members>CardPaymentMethod</members>
         <members>Case</members>
@@ -4644,6 +4646,7 @@
         <members>CTIS__c-CTIS Layout</members>
         <members>Campaign-Campaign Layout</members>
         <members>CampaignMember-Campaign Member Page Layout</members>
+        <members>Campaign_Custom__c-Campaign Custom Layout</members>
         <members>Candidate__c-Candidate Layout</members>
         <members>CardPaymentMethod-Card Payment Method Layout</members>
         <members>Case-Case %28Marketing%29 Layout</members>
